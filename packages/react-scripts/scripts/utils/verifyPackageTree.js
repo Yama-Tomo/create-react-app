@@ -46,10 +46,7 @@ function verifyPackageTree() {
         `The ${dep} package should be pinned, instead got version ${expectedVersion}.`
       );
     }
-    expectedVersionsByDep[dep] = expectedVersion;
-  });
 
-  depsToCheck.forEach(dep => {
     let depPackageJsonPath = undefined;
     const depPackageVersion = (() => {
       try {
@@ -60,7 +57,6 @@ function verifyPackageTree() {
       }
     })();
 
-    const expectedVersion = expectedVersionsByDep[dep];
     if (semver.satisfies(depPackageVersion, expectedVersion)) {
       return;
     }
