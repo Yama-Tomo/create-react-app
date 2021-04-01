@@ -82,9 +82,9 @@ function verifyPackageTree() {
         `However, a different version of ${chalk.bold(
           dep
         )} was detected higher up in the tree:\n\n` +
-          `  ${chalk.bold(chalk.red(invalidDepPackagePath))} (version: ${chalk.bold(
-            chalk.red(depPackageVersion)
-          )}) \n\n` +
+        `  ${chalk.bold(
+          chalk.red(invalidDepPackagePath)
+        )} (version: ${chalk.bold(chalk.red(depPackageVersion))}) \n\n` +
         `Manually installing incompatible versions is known to cause hard-to-debug issues.\n\n` +
         chalk.red(
           `If you would prefer to ignore this check, add ${chalk.bold(
@@ -103,16 +103,12 @@ function verifyPackageTree() {
         `  ${chalk.cyan('2.')} Delete ${chalk.bold(
           'node_modules'
         )} in your project folder.\n` +
-            `  ${chalk.cyan('3.')} Remove "${chalk.bold(
-              dep
-            )}" from ${chalk.bold('dependencies')} and/or ${chalk.bold(
-              'devDependencies'
-            )} in the ${chalk.bold(
+        `  ${chalk.cyan('3.')} Remove "${chalk.bold(dep)}" from ${chalk.bold(
+          'dependencies'
+        )} and/or ${chalk.bold('devDependencies')} in the ${chalk.bold(
           'package.json'
         )} file in your project folder.\n` +
-             `  ${chalk.cyan('4.')} Run ${chalk.bold(
-               'npm install'
-             )} or ${chalk.bold(
+        `  ${chalk.cyan('4.')} Run ${chalk.bold('npm install')} or ${chalk.bold(
           'yarn'
         )}, depending on the package manager you use.\n\n` +
         `In most cases, this should be enough to fix the problem.\n` +
@@ -124,7 +120,7 @@ function verifyPackageTree() {
         )} (http://yarnpkg.com/) and repeat the above steps with it instead.\n` +
         `     This may help because npm has known issues with package hoisting which may get resolved in future versions.\n\n` +
         `  ${chalk.cyan('6.')} Check if ${chalk.bold(
-            invalidDepPackagePath
+          invalidDepPackagePath
         )} is outside your project directory.\n` +
         `     For example, you might have accidentally installed something in your home folder.\n\n` +
         `  ${chalk.cyan('7.')} Try running ${chalk.bold(
